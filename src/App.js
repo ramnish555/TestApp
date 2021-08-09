@@ -7,10 +7,10 @@ import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 const initialState = {
-  'btn1': {'start': null,'end': null,'startSave': null,'endSave': null},
-  'btn2': {'start': null,'end': null,'startSave': null,'endSave': null},
-  'btn3': {'start': null,'end': null,'startSave': null,'endSave': null},
-  'btn4': {'start': null,'end': null,'startSave': null,'endSave': null},
+  'comments': {'start': null,'end': null,'startSave': null,'endSave': null},
+  'photos': {'start': null,'end': null,'startSave': null,'endSave': null},
+  'todos': {'start': null,'end': null,'startSave': null,'endSave': null},
+  'posts': {'start': null,'end': null,'startSave': null,'endSave': null},
 };
 
 
@@ -45,16 +45,16 @@ const App = ()=>{
     /** This code will run when any button click event happen ... */
     switch(type){
       case 'Button 1':
-        apiCall('https://jsonplaceholder.typicode.com/comments', 'btn1');
+        apiCall('https://jsonplaceholder.typicode.com/comments', 'comments');
         break;
       case 'Button 2':
-        apiCall('https://jsonplaceholder.typicode.com/photos', 'btn2');
+        apiCall('https://jsonplaceholder.typicode.com/photos', 'photos');
         break;
       case 'Button 3':
-        apiCall('https://jsonplaceholder.typicode.com/todos', 'btn3');
+        apiCall('https://jsonplaceholder.typicode.com/todos', 'todos');
         break;
       case 'Button 4':
-        apiCall('https://jsonplaceholder.typicode.com/posts', 'btn4');
+        apiCall('https://jsonplaceholder.typicode.com/posts', 'posts');
         break;
       default:
         console.log('unix');
@@ -64,10 +64,10 @@ const App = ()=>{
   useEffect(()=>{
     /**To call the all the four API's once the screen load after 5 seconds...*/
     setTimeout(function(){
-      apiCall('https://jsonplaceholder.typicode.com/comments', 'btn1');
-      apiCall('https://jsonplaceholder.typicode.com/photos', 'btn2');
-      apiCall('https://jsonplaceholder.typicode.com/todos', 'btn3');
-      apiCall('https://jsonplaceholder.typicode.com/posts', 'btn4');
+      apiCall('https://jsonplaceholder.typicode.com/comments', 'comments');
+      apiCall('https://jsonplaceholder.typicode.com/photos', 'photos');
+      apiCall('https://jsonplaceholder.typicode.com/todos', 'todos');
+      apiCall('https://jsonplaceholder.typicode.com/posts', 'posts');
     }, 5000);
   },[]);
 
@@ -76,12 +76,12 @@ const App = ()=>{
       <Header />
       <div className="container">
         <div className="row">
-            <Timestamp time={time.btn1}/>
-            <Timestamp time={time.btn2}/>
+            <Timestamp time={time.comments}/>
+            <Timestamp time={time.photos}/>
         </div>
         <div className="row">
-            <Timestamp time={time.btn3}/>
-            <Timestamp time={time.btn4}/>
+            <Timestamp time={time.todos}/>
+            <Timestamp time={time.posts}/>
         </div>
       </div>
       <div className="container">
